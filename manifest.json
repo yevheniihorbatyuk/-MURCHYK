@@ -1,0 +1,77 @@
+{
+  "name": "MURCHYK Token - Офіційний сайт спільноти Обрію",
+  "short_name": "MURCHYK",
+  "description": "Мурчик — токен спільноти Обрію. Це не актив, а настрій: мʼякий, грайливий і завжди поруч, коли потрібно трохи тепла 💗🐾",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0c29",
+  "theme_color": "#ff6eb4",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "uk",
+  "icons": [
+    {
+      "src": "./assets/murchyk.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/murchyk.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/murchyk.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["finance", "business", "cryptocurrency", "community", "social"],
+  "screenshots": [
+    {
+      "src": "./assets/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "./assets/screenshot-mobile.png",
+      "sizes": "360x640",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Отримати MURK",
+      "short_name": "Airdrop",
+      "description": "Швидкий доступ до отримання токенів",
+      "url": "/#howto",
+      "icons": [{ "src": "./assets/murchyk.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Спільнота",
+      "short_name": "Telegram",
+      "description": "Приєднатися до Telegram спільноти",
+      "url": "https://t.me/obreey_space",
+      "icons": [{ "src": "./assets/murchyk.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Контракт",
+      "short_name": "Tonviewer",
+      "description": "Переглянути токен у Tonviewer",
+      "url": "https://tonviewer.com/EQBrh2j0MrQo805YVWLQ2dhLXYvSSqz3tDOQgGuL87ScjWQS",
+      "icons": [{ "src": "./assets/murchyk.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://tonkeeper.com"
+    }
+  ],
+  "prefer_related_applications": false
+}

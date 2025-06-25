@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MURCHYK — токен спільноти Обрію. Це не актив, а настрій: мʼякий, грайливий і завжди поруч, коли потрібно трохи тепла 💗🐾" />
+  <meta name="keywords" content="MURCHYK, MURK, TON, Jetton, криптотокен, спільнота, Обрій" />
+  <meta property="og:title" content="$MURCHYK — токен спільноти Обрію" />
+  <meta property="og:description" content="Мʼякий, грайливий токен для open-mind душ з котячим серцем 🐾" />
+  <meta property="og:image" content="./assets/murchyk.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>$MURCHYK — токен спільноти Обрію</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/murchyk.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  
+  <!-- Particles.js for background animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  
+  <style>
+    :root {
+      --primary: #ff6eb4;
+      --secondary: #9c88ff;
+      --accent: #64ffda;
+      --bg-dark: #0f0c29;
+      --bg-card: rgba(22, 22, 45, 0.5);
+      --text-light: #e6e6e6;
+      --text-muted: #8892b0;
+      --glass-border: rgba(255, 255, 255, 0.15);
+      --glow-primary: 0 0 20px rgba(255, 110, 180, 0.5);
+      --glow-secondary: 0 0 20px rgba(156, 136, 255, 0.5);
+      --border-radius: 16px;
+      --transition: all 0.3s ease-in-out;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: var(--text-light);
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; position: relative; z-index: 1; }
+
+    /* Navigation */
+    .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(15, 12, 41, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid var(--glass-border); z-index: 1000; padding: 1rem 2rem; transition: var(--transition); }
+    .nav.scrolled { box-shadow: var(--glow-secondary); }
+    .nav-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; font-weight: 800; font-size: 1.5rem; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 500; transition: var(--transition); position: relative; }
+    .nav-links a:hover { color: var(--primary); transform: translateY(-2px); }
+    .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--primary); border-radius: 2px; transition: var(--transition); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Hero Section */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; }
+    .hero-content { max-width: 800px; }
+    .hero-badge { display: inline-block; background: var(--bg-card); border: 1px solid var(--glass-border); backdrop-filter: blur(10px); padding: 0.75rem 1.5rem; border-radius: 50px; margin-bottom: 2rem; font-size: 0.9rem; font-weight: 500; color: var(--accent); }
+    .hero img { width: 250px; height: 250px; border-radius: 50%; margin-bottom: 3rem; box-shadow: var(--glow-primary); transition: var(--transition); animation: float 6s ease-in-out infinite; }
+    .hero img:hover { transform: scale(1.05) rotate(5deg); box-shadow: var(--glow-secondary); }
+    .hero h1 { font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.1; }
+    .hero p { font-size: 1.3rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    /* Buttons */
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2.5rem; border: 1px solid transparent; border-radius: 50px; font-weight: 600; font-size: 1.1rem; text-decoration: none; cursor: pointer; transition: var(--transition); }
+    .btn-primary { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: var(--text-light); box-shadow: var(--glow-primary); }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.03); box-shadow: var(--glow-secondary); }
+    .btn-secondary { background: var(--bg-card); color: var(--text-light); border-color: var(--glass-border); backdrop-filter: blur(10px); }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-3px); border-color: var(--primary); }
+
+    /* General Sections & Cards */
+    .section { padding: 6rem 0; }
+    .section-title { text-align: center; font-size: 3rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-subtitle { text-align: center; font-size: 1.2rem; color: var(--text-muted); margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .card { background: var(--bg-card); border: 1px solid var(--glass-border); backdrop-filter: blur(15px); border-radius: var(--border-radius); padding: 2.5rem; transition: transform 0.1s ease-out, box-shadow 0.3s ease-out; position: relative; overflow: hidden; }
+    .card:hover { box-shadow: var(--glow-primary); }
+    .card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-light); display: flex; align-items: center; gap: 0.75rem; }
+    .card h3 i { color: var(--primary); }
+    .card p { color: var(--text-muted); }
+
+    /* Info Table & Status */
+    .info-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+    .info-table td { padding: 0.8rem 0; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .info-table td:first-child { color: var(--text-muted); font-weight: 500; width: 40%; }
+    .info-table td:last-child { color: var(--text-light); font-family: 'JetBrains Mono', monospace; }
+    
+    .status-list { list-style: none; display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .status-item { display: flex; align-items: center; gap: 1rem; }
+    .status-indicator { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .status-active { background: #4ade80; box-shadow: 0 0 10px #4ade80; }
+    .status-pending { background: #fbbf24; box-shadow: 0 0 10px #fbbf24; }
+    .status-disabled { background: #ef4444; box-shadow: 0 0 10px #ef4444; }
+
+    /* Warning box */
+    .warning-box { background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(239, 68, 68, 0.1)); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: var(--border-radius); padding: 2rem; margin: 3rem 0; text-align: center; backdrop-filter: blur(10px); }
+    .warning-box strong { color: #fbbf24; }
+    
+    /* Stats section */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 4rem 0; }
+    .stat-card { background: var(--bg-card); border: 1px solid var(--glass-border); backdrop-filter: blur(15px); border-radius: var(--border-radius); padding: 2rem; text-align: center; transition: var(--transition); }
+    .stat-card:hover { transform: translateY(-5px); box-shadow: var(--glow-primary); }
+    .stat-number { font-size: 2.5rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; margin-bottom: 0.5rem; }
+    .stat-label { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    
+    /* Footer */
+    .footer { 
+      text-align: center; 
+      padding: 4rem 2rem 2rem; 
+      color: var(--text-muted); 
+      border-top: 1px solid var(--glass-border); 
+      margin-top: 6rem;
+      position: relative;
+      z-index: 10;
+    }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .footer-links a { 
+      color: var(--text-muted); 
+      font-size: 1.5rem; 
+      transition: var(--transition); 
+      text-decoration: none;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+    .footer-links a:hover { color: var(--primary); transform: translateY(-3px); }
+    .footer-social { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .footer-social a { 
+      color: var(--primary); 
+      text-decoration: none; 
+      font-weight: 500; 
+      transition: var(--transition);
+      cursor: pointer;
+      pointer-events: auto;
+    }
+    .footer-social a:hover { color: var(--secondary); }
+
+    /* Animations & Misc */
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+    .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--primary), var(--secondary)); z-index: 9999; }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 6rem 1rem 2rem; }
+      .hero img { width: 200px; height: 200px; }
+      .btn-group { flex-direction: column; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-links { gap: 1rem; }
+      .footer-social { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div id="particles-js"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-content">
+      <div class="logo"><i class="fa-solid fa-paw"></i> MURCHYK</div>
+      <ul class="nav-links">
+        <li><a href="#home">Головна</a></li>
+        <li><a href="#why">Чому MURCHYK?</a></li>
+        <li><a href="#tokenomics">Токеноміка</a></li>
+        <li><a href="#howto">Як отримати</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-badge" data-aos="fade-down"><i class="fa-solid fa-star"></i> Офіційний токен спільноти Обрію</div>
+        <img src="./assets/murchyk.png" alt="Murchyk Logo" data-aos="zoom-in" data-aos-delay="200" />
+        <h1 data-aos="fade-up" data-aos-delay="400">$MURCHYK</h1>
+        <p data-aos="fade-up" data-aos-delay="600">Це не актив, а настрій: мʼякий, грайливий і завжди поруч, коли потрібно трохи тепла та муркотіння в блокчейні 💗</p>
+        <div class="btn-group" data-aos="fade-up" data-aos-delay="800">
+          <a href="#howto" class="btn btn-primary"><i class="fa-solid fa-gift"></i> Отримати MURK</a>
+          <a href="https://tonviewer.com/EQBrh2j0MrQo805YVWLQ2dhLXYvSSqz3tDOQgGuL87ScjWQS" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-cube"></i> Переглянути контракт</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-grid">
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="stat-number" data-count="1111111">0</span>
+        <div class="stat-label">Max Supply</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="stat-number" data-count="0">0</span>
+        <div class="stat-label">Decimals</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+        <span class="stat-number" data-count="90">0</span>
+        <div class="stat-label">% в резерві</div>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+        <span class="stat-number" data-count="100">0</span>
+        <div class="stat-label">% Децентралізовано</div>
+      </div>
+    </div>
+
+    <!-- Why MURCHYK Section -->
+    <section class="section" id="why">
+        <h2 class="section-title" data-aos="fade-up">Чому MURCHYK?</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Це більше, ніж просто токен. Це символ нашої спільноти.</p>
+        <div class="cards-grid">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fa-solid fa-users"></i> Для спільноти</h3>
+                <p>MURCHYK створений для об'єднання, нагородження за активність та участі в житті спільноти Обрію. 100% токенів належать спільноті.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fa-solid fa-hand-holding-heart"></i> Справедливий запуск</h3>
+                <p>Без pre-mine, без інвесторів, без allocation для команди. Тільки чесний розподіл через airdrop-и та активності.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fa-solid fa-cat"></i> Просто для фану</h3>
+                <p>Основна мета — дарувати радість, створювати меми та гейміфікувати взаємодію. Це токен-настрій, а не фінансовий інструмент.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section class="section" id="tokenomics">
+      <h2 class="section-title" data-aos="fade-up">Токеноміка та Безпека</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Прозорість та безпека — наші головні пріоритети.</p>
+      <div class="cards-grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <h3><i class="fa-solid fa-chart-pie"></i> Технічні деталі</h3>
+          <table class="info-table">
+            <tr><td>Назва</td><td>MURCHYK (MURK)</td></tr>
+            <tr><td>Мережа</td><td>TON</td></tr>
+            <tr><td>Стандарт</td><td>Jetton (TEP-74)</td></tr>
+            <tr><td>Decimals</td><td>0</td></tr>
+            <tr><td>Max Supply</td><td>1,111,111</td></tr>
+          </table>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3><i class="fa-solid fa-shield-halved"></i> Статус безпеки</h3>
+          <ul class="status-list">
+            <li class="status-item"><div class="status-indicator status-active"></div><span>Фіксована емісія</span></li>
+            <li class="status-item"><div class="status-indicator status-active"></div><span>Права адміна спалено</span></li>
+            <li class="status-item"><div class="status-indicator status-active"></div><span>Метадані в IPFS</span></li>
+            <li class="status-item"><div class="status-indicator status-disabled"></div><span>Mint функція відключена</span></li>
+            <li class="status-item"><div class="status-indicator status-pending"></div><span>Верифікація Tonkeeper</span></li>
+          </ul>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <h3><i class="fa-solid fa-boxes-stacked"></i> Розподіл токенів</h3>
+          <table class="info-table">
+            <tr><td>Резервний фонд</td><td>1,000,000 (90%)</td></tr>
+            <tr><td>Airdrop пул</td><td>111,111 (10%)</td></tr>
+            <tr><td>Команда</td><td>0 (0%)</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="warning-box" data-aos="fade-up">
+      <strong><i class="fa-solid fa-triangle-exclamation"></i> Важливо:</strong> Перший переказ MURK на новий гаманець може коштувати ~0.2 TON через створення контракту. Наступні перекази — лише ~0.03 TON. Це особливість мережі TON.
+    </div>
+
+    <!-- How to Get Section -->
+    <section class="section" id="howto">
+      <h2 class="section-title" data-aos="fade-up">Як отримати MURCHYK?</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Приєднуйся до нашого муркотливого руху всього за кілька кроків!</p>
+      <div class="btn-group" data-aos="fade-up" data-aos-delay="300">
+        <a href="https://t.me/obreey_space" class="btn btn-primary" target="_blank"><i class="fa-brands fa-telegram"></i> Приєднатись до спільноти</a>
+        <a href="https://tonkeeper.com/" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-wallet"></i> Завантажити Tonkeeper</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-social">
+      <a href="https://t.me/obreey_space" target="_blank">📱 Telegram: Obreey Space</a>
+      <a href="https://www.instagram.com/obreey_space/" target="_blank">📸 Instagram: Obreey</a>
+      <a href="https://www.instagram.com/catlandia_obreey/" target="_blank">🐾 Instagram: Catlandia</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://t.me/obreey_space" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.instagram.com/obreey_space/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.instagram.com/catlandia_obreey/" target="_blank" aria-label="Catlandia"><i class="fa-solid fa-cat"></i></a>
+      <a href="https://github.com/username/murchyk-token" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://tonviewer.com/EQBrh2j0MrQo805YVWLQ2dhLXYvSSqz3tDOQgGuL87ScjWQS" target="_blank" aria-label="Tonviewer"><i class="fa-solid fa-cube"></i></a>
+    </div>
+    <p>© 2025 MURCHYK Community • Створено з 💗 спільнотою Обрію</p>
+    <p style="margin-top: 0.5rem; font-style: italic;">"Murchyk — це муркотіння блокчейну" 🐾</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // --- INITIALIZATION ---
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize AOS (Animate on Scroll)
+      AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 50 });
+      
+      // Initialize Particles.js
+      initParticles();
+      
+      // Add all event listeners
+      addScrollListeners();
+      add3DCardEffect();
+      addSmoothScrolling();
+      addCounterAnimation();
+    });
+
+    // --- PARTICLES.JS CONFIG ---
+    function initParticles() {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 60, density: { enable: true, value_area: 800 } },
+          color: { value: ['#ff6eb4', '#9c88ff', '#64ffda'] },
+          shape: { type: 'circle' },
+          opacity: { value: 0.4, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.1, sync: false } },
+          size: { value: 3, random: true, anim: { enable: false } },
+          line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.1, width: 1 },
+          move: { enable: true, speed: 1, direction: 'none', random: true, straight: false, out_mode: 'out' }
+        },
+        interactivity: {
+          detect_on: 'canvas',
+          events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+          modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+        },
+        retina_detect: true
+      });
+    }
+
+    // --- UI & UX EFFECTS ---
+    function addScrollListeners() {
+      const nav = document.getElementById('nav');
+      const progressBar = document.getElementById('progressBar');
+      window.addEventListener('scroll', () => {
+        // Nav background on scroll
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+        // Progress bar
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        progressBar.style.width = (winScroll / height) * 100 + '%';
+      });
+    }
+
+    function add3DCardEffect() {
+      const cards = document.querySelectorAll('.card, .stat-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = card.offsetWidth / 2;
+          const centerY = card.offsetHeight / 2;
+          const rotateX = (y - centerY) / 20; // Slower rotation
+          const rotateY = (centerX - x) / 20;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        });
+      });
+    }
+
+    function addSmoothScrolling() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    // Counter animation
+    function addCounterAnimation() {
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-count'));
+        const increment = target / 100;
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += increment;
+          element.textContent = Math.floor(current).toLocaleString();
+          
+          if (current >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+          }
+        }, 20);
+      }
+
+      // Intersection Observer for counters
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      });
+
+      document.querySelectorAll('[data-count]').forEach(counter => {
+        counterObserver.observe(counter);
+      });
+    }
+
+    // Copy to clipboard functionality
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Show notification
+        const notification = document.createElement('div');
+        notification.textContent = 'Адресу скопійовано!';
+        notification.style.cssText = `
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: linear-gradient(45deg, var(--primary), var(--secondary));
+          color: white;
+          padding: 1rem 2rem;
+          border-radius: 10px;
+          z-index: 10000;
+          font-weight: 600;
+          box-shadow: var(--glow-primary);
+        `;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.remove();
+        }, 2000);
+      });
+    }
+
+    // Easter egg - konami code
+    let konamiCode = [];
+    const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+    
+    document.addEventListener('keydown', (e) => {
+      konamiCode.push(e.keyCode);
+      if (konamiCode.length > konamiSequence.length) {
+        konamiCode.shift();
+      }
+      
+      if (konamiCode.toString() === konamiSequence.toString()) {
+        // Activate easter egg
+        document.body.style.animation = 'gradientBG 0.5s ease infinite';
+        setTimeout(() => {
+          document.body.style.animation = 'gradientBG 15s ease infinite';
+        }, 3000);
+        
+        // Show special message
+        alert('🐾 Мурчик схвалює твою кмітливість! Ти отримаєш бонусні MURK! 💗');
+      }
+    });
+
+    // Performance monitoring
+    window.addEventListener('load', () => {
+      const loadTime = performance.now();
+      console.log(`🚀 Сайт завантажився за ${Math.round(loadTime)}ms`);
+    });
+
+    // Analytics event tracking (placeholder)
+    function trackEvent(eventName, eventData) {
+      console.log('Event tracked:', eventName, eventData);
+    }
+
+    // Track button clicks
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        trackEvent('button_click', {
+          button_text: e.target.textContent.trim(),
+          button_url: e.target.href || 'no-url'
+        });
+      });
+    });
+  </script>
+
+  <!-- Meta tags for PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0f0c29">
+  <link rel="apple-touch-icon" href="./assets/murchyk.png">
+</body>
+</html>
