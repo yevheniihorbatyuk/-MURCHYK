@@ -127,11 +127,11 @@
     .warning-box strong { color: #fbbf24; }
     
     /* Stats section */
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 4rem 0; }
-    .stat-card { background: var(--bg-card); border: 1px solid var(--glass-border); backdrop-filter: blur(15px); border-radius: var(--border-radius); padding: 2rem; text-align: center; transition: var(--transition); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; margin: 3rem 0; }
+    .stat-card { background: var(--bg-card); border: 1px solid var(--glass-border); backdrop-filter: blur(15px); border-radius: var(--border-radius); padding: 1.5rem; text-align: center; transition: var(--transition); }
     .stat-card:hover { transform: translateY(-5px); box-shadow: var(--glow-primary); }
-    .stat-number { font-size: 2.5rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; margin-bottom: 0.5rem; }
-    .stat-label { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    .stat-number { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; margin-bottom: 0.5rem; line-height: 1.1; }
+    .stat-label { color: var(--text-muted); font-size: clamp(0.7rem, 2vw, 0.9rem); text-transform: uppercase; letter-spacing: 0.5px; word-break: break-word; }
     
     /* Footer */
     .footer { 
@@ -172,11 +172,20 @@
       .nav-links { display: none; }
       .hero { padding: 6rem 1rem 2rem; }
       .hero img { width: 200px; height: 200px; }
-      .btn-group { flex-direction: column; }
-      .cards-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .btn-group { flex-direction: column; align-items: center; }
+      .btn { padding: 0.8rem 2rem; font-size: 1rem; }
+      .cards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0; }
+      .stat-card { padding: 1rem; }
+      .stat-number { font-size: 1.5rem; margin-bottom: 0.3rem; }
+      .stat-label { font-size: 0.65rem; letter-spacing: 0.3px; }
+      .section { padding: 4rem 0; }
+      .section-title { font-size: 2.2rem; }
+      .section-subtitle { font-size: 1rem; padding: 0 1rem; }
       .footer-links { gap: 1rem; }
       .footer-social { flex-direction: column; gap: 0.5rem; }
+      .container { padding: 1rem; }
+      .warning-box { margin: 2rem 0; padding: 1.5rem; }
     }
   </style>
 </head>
